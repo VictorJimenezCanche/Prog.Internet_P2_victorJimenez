@@ -14,3 +14,5 @@ logs
 .vscode/
 .idea/
 *.swp
+
+package-lock.json

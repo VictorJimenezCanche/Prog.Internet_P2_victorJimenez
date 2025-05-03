@@ -7,7 +7,6 @@ const { errorHandler } = require('./middleware/errorMiddleware')
 const { notFound } = require('./middleware/notFoundMiddleware')
 
 const app = express()
-const PORT = process.env.PORT || 5000
 
 
 connectDB()
@@ -30,7 +29,6 @@ app.use('/api/cards', require('./routes/fotosCardMilanesoRoutes'))
 app.use(notFound)
 app.use(errorHandler)
 
-app.listen(PORT, () => {
-    console.log(`Servidor iniciado en el puerto ${PORT}`)
-
+app.listen(process.env.PORT || 5000, () => {
+    console.log(`Servidor iniciado en el puerto ${process.env.PORT || 5000}`)
 })
